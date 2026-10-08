@@ -1,0 +1,42 @@
+# IntegraPublic - configuracao de servidor e tema
+# Acesso em rede: http://10.10.1.225:6789
+
+[server]
+address = "0.0.0.0"
+port = 6789
+headless = true
+maxUploadSize = 50
+fileWatcherType = "none"
+
+# Protecao de origem. Como o sistema fica exposto na rede interna, aceita
+# requisicoes apenas das origens conhecidas. Se um dia o acesso passar a ser
+# feito por nome de maquina (ex.: http://servidor:6789), acrescente a origem
+# na lista abaixo - caso contrario o navegador sera recusado.
+enableXsrfProtection = true
+enableCORS = true
+corsAllowedOrigins = [
+    "http://10.10.1.225:6789",
+    "http://localhost:6789",
+    "http://127.0.0.1:6789",
+]
+
+[browser]
+serverAddress = "10.10.1.225"
+serverPort = 6789
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F5F9"
+textColor = "#0F172A"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false
+
+[runner]
+magicEnabled = true
+fastReruns = true
